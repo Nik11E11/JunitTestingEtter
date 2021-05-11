@@ -1,6 +1,6 @@
 package ch.bztf;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Test;
 
@@ -9,12 +9,24 @@ import org.junit.Test;
  */
 public class AppTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    public void test(){
+        System.out.println("This test ran");
+    }
+
+    @Test
+    public void testZylinderOberflaeche(){
+        Zylinderber zylinderOberflaeche = new Zylinderber();
+        double exp = 131.94689145077132;
+        double act = zylinderOberflaeche.zylinderOberflaeche(3, 4);
+        assertEquals(exp, act);
+    }
+
+    @Test
+    public void testZylinderVolumen(){
+        Zylinderber zylinderVolumen = new Zylinderber();
+        double exp = 113.09733552923255;
+        double act = zylinderVolumen.zylinderVolumen(3, 4);
+        assertEquals(exp, act);
     }
 }
